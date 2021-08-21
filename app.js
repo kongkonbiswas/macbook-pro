@@ -71,3 +71,15 @@ function getInputValue() {
     // let g = parseFloat(w) + parseFloat(x) + parseFloat(y) + parseFloat(z);
     document.getElementById('total-price').innerText = g;
 }
+// promo section 
+document.getElementById('appply-promo').addEventListener('click', function(){
+    // get user promo code
+    const emailField = document.getElementById('promo-code')
+    const userEmail = emailField.value;
+    // check user promo
+    if(userEmail == 'stevekaku'){
+        v = document.getElementById('total-price').innerText;
+        x = parseInt(v) / 20;
+        document.getElementById('last-price').innerText = x;
+    }
+});
