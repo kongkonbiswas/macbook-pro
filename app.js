@@ -1,4 +1,4 @@
-
+// first Part Calculation Memory
 function updateCaseNumber(isChanging){
         const memoryInput = document.getElementById('memory-price');
         const memoryPrice = memoryInput.innerText;
@@ -8,7 +8,6 @@ function updateCaseNumber(isChanging){
         else if(isChanging == false){
             memoryInput.innerText = (parseInt(memoryPrice).toFixed() * 0) + 180;
         }
-        return memoryPrice;
 }
 document.getElementById('min-memory').addEventListener('click', function () {
     updateCaseNumber(true);
@@ -17,6 +16,7 @@ document.getElementById('max-memory').addEventListener('click', function () {
     updateCaseNumber(false)
 });
 
+// Second Part Calculation Storage
 function midderCaseNumber(isIncreasing){
         const storageInput = document.getElementById('storage-price');
         const storagePrice = storageInput.innerText;
@@ -40,6 +40,7 @@ document.getElementById('max-storage').addEventListener('click', function () {
     midderCaseNumber()
 });
 
+// Third Part Calculation Delivery
 function lastCaseNumber(isChanging){
     const deliveryInput = document.getElementById('delivery-price');
     const deliveryPrice = deliveryInput.innerText;
@@ -57,61 +58,16 @@ document.getElementById('costly-shipping').addEventListener('click', function ()
 lastCaseNumber(false)
 });
 // outline
-// function calculateTotalMemory(){
-//     const bestPrice = document.getElementById('memory-price');
-//     const priceText = bestPrice.innerText;
-//     const bestPriceNumber = parseFloat(priceText);
-//     console.log(bestPriceNumber)
-//     return bestPriceNumber;
-// }
-// calculateTotalMemory();
-// function calculateTotalStorage(){
-//     const storageTotal = document.getElementById('storage-price');
-//     const totalText = storageTotal.value;
-//     const storageTotalNumber = parseFloat(totalText);
-//     const bestPrice = document.getElementById('memory-price');
-//     const priceText = bestPrice.value;
-//     const bestPriceNumber = parseFloat(priceText);
-//     const delivaryTotal = document.getElementById('delivery-price');
-//     const deliveryText = delivaryTotal.value
-//     const deliveryNumber = parseFloat(deliveryText)
-//     const ttoal = storageTotalNumber + bestPriceNumber + deliveryNumber;
-//     document.getElementById('total-price')= ttoal.value;
-
-//     // console.log(storageTotalNumber)
-//     // return storageTotalNumber;
-// }
-// // function total(){
-// // //     const storageValue = calculateTotalMemory()
-// // //     const memoryValue = calculateTotalStorage()
-// //     const Stotal = calculateTotalMemory() + calculateTotalStorage();
-// //     // const totalMS = storageValue + memoryValue;
-// //     document.getElementById('total-price').innerText = Stotal;
-// // }
-// function getInputValue(){
-//     const memoryInput = document.getElementById('memory-price');
-//     console.log(memoryInput)
-//     const memoryText = memoryInput.innerText;
-//     // memoryInput.innerText = parseInt(memoryText)
-//     console.log(memoryText)
-//     // return memoryText;
-// }
-// function calculationTotal(){
-//     const memoryTotal = getInputValue() + 1299;
-//     document.getElementById('total-price') = memoryTotal.innerText;
-// }
-function getInputValue(product) {
-    const productInput = document.getElementById(product);
-    const productNumber = parseInt(productInput.value);
-    return productNumber;
-}
-
-function calculateTotal() {
-    const phoneTotal = getInputValue('min-memory');
-    const caseTotal = getInputValue('max-memory') + 1299;
-    const subTotal = phoneTotal + caseTotal;
-    // const tax = subTotal / 10;
-    // const totalPrice = subTotal + tax;
-    // update on the html
-    document.getElementById('total-price').innerText = subTotal;
+function getInputValue() {
+    // let a = document.getElementById('best-price');
+    // let w = a.innerText;
+    let b = document.getElementById('memory-price')
+    let x = b.innerText;
+    let c = document.getElementById('storage-price')
+    let y = c.innerText;
+    let d = document.getElementById('delivery-price')
+    let z = d.innerText;
+    let g = 1299 + parseInt(x) + parseInt(y) + parseInt(z);
+    // let g = parseFloat(w) + parseFloat(x) + parseFloat(y) + parseFloat(z);
+    document.getElementById('total-price').innerText = g;
 }
